@@ -1,0 +1,1 @@
+print("{:<10} {:<10} {:<10} {:<10} {:<10}".format('TT', 'Ho Ten', 'Lop', 'Diem 1', 'Diem 2'))
