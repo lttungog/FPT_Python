@@ -152,6 +152,44 @@ def add_grade():
     connection.close()
     print("Returning to main menu...")
 
+def filter_stud_by_class():
+    
+    connection = connect_to_db()
+    cursor = connection.cursor()
+    
+    sql_classes = "SELECT * FROM subjects"
+    
+    cursor.execute(sql_classes)
+    
+    classes = cursor.fetchall()
+    
+    for x in classes:
+        print(f"Class Name: {x[1]}")
+    
+    try:
+        subject_name = input("\nPlease enter one of the Classes above: ")
+    except ValueError:
+        print("Please enter a Subject")
+    
+    query = """
+        SELECT s.name
+        FROM students s
+        JOIN student_subjects ss ON s.id = ss.student_id
+        JOIN subjects sub ON ss.subject_id = sub.id
+        WHERE sub.subject_name = %s
+    """
+    
+    cursor.execute(query, (subject_name,))
+    
+    students_in_math = cursor.fetchall()
+    
+    print(f"\nThe Students attending the {subject_name} Classes are:")
+    for student in students_in_math:
+        print(student[0])
+        
+    cursor.close()
+    connection.close()
+
 def menu():
     
     exit = True
@@ -166,7 +204,8 @@ def menu():
         print("4. Remove a Student")
         print("5. Update Student Class Information")
         print("6. Add Student Grade")
-        print("7. Exit")
+        print("7. Filter Students by Class")
+        print("8. Exit")
         print("\n")
         
         try:
@@ -191,11 +230,13 @@ def menu():
             case 6:
                 add_grade()
             case 7:
+                filter_stud_by_class()
+            case 8:
                 exit = False
             case _:
                 print("Please enter one of the available choices.")
     
-
+    
 if __name__ == '__main__':
     # add_student()
     # edit_student()
