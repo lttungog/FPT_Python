@@ -74,7 +74,7 @@ def find_student():
             
             for x in myresult:
                 print(f"Student with ID {student_id} found!")
-                print(f"Name: {x[1]}, Age: {x[2]}, Class: {x[3]}, Grade: {x[4]}")
+                print(f"\nName: {x[1]}, Age: {x[2]}, Class: {x[3]}, Grade: {x[4]}")
             break
         
         else:
@@ -83,7 +83,6 @@ def find_student():
         
     cursor.close()
     connection.close()
-    print("Returning to main menu...")
 
 def delete_student():
     
@@ -101,13 +100,12 @@ def delete_student():
     
     connection.commit()
     
-    print(f"\nStudent with ID {student_id} has been removed!")
+    print(f"\nStudent with ID {student_id} has been removed!\n")
     
     get_all_students()
     
     cursor.close()
     connection.close()
-    print("Returning to main menu...")
 
 def edit_student():
     
