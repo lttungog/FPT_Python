@@ -9,5 +9,8 @@ class Animal:
     def set_name(self, name):
         self.name = name
         
+    def speak(self):
+        pass
+        
     def display(self):
-        print(f"The animal is a {self.name}")
+        print(f"This is a {self.name}")

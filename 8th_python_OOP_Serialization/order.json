@@ -1,0 +1,15 @@
+{
+    "orderID": "100",
+    "customer": {
+        "name": "Tung",
+        "email": "blabla@gmail.com",
+        "phone": "0986098532",
+        "address": {
+            "street": "Hanoi",
+            "city": "HN",
+            "state": "HN",
+            "postalCode": "100000",
+            "country": "Vietnam"
+        }
+    }
+}

@@ -1,17 +1,28 @@
-from animals import Animal
-
-class Person (Animal):
+class Person():
     
-    def __init__(self, name, speak) -> None:
-        super().__init__(name)
-        self.speak = speak
+    def __init__(self, name, age, address) -> None:
+        self.name = name
+        self.age = age
+        self.address = address
         
-    def speak(self):
-        return self.speak
+    def get_name(self):
+        return self.name
     
-    def set_speak(self, speak):
-        self.speak = speak
+    def set_name(self, name):
+        self.name = name
         
-    def display(self):
-        super().display()
-        print(f"{self.name} said: {self.speak}")
+    def get_age(self):
+        return self.age
+    
+    def set_age(self, age):
+        self.age = age
+        
+    def get_address(self):
+        return self.address
+    
+    def set_address(self, address):
+        self.address = address
+        
+    def walk(self):
+        print(f"{self.name} aged {self.age} whose address is {self.address} is walking.")
+    

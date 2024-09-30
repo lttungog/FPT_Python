@@ -1,19 +1,17 @@
-# Clear previous code
 import os
 os.system("cls")
 
-from cat import Cat
-from dog import Dog
 from person import Person
+from vehicle import Vehicle
 
 if __name__ == '__main__':
-    cat = Cat("Cat", "Meow")
-    cat.display()
+    
+    person = Person("Tung", 29, "Hanoi")
+    person.walk()
     
     print("\n")
-    dog = Dog("Dog", "Woof woof")
-    dog.display()
     
-    print("\n")
-    person = Person("Lam", "Nigga Nigga Nigga")
-    person.display()
+    vehicle = Vehicle("Toyota Camry", 2023, "Toyota", 4)
+    vehicle.start()
+    vehicle.accelerate()
+    vehicle.stop()
